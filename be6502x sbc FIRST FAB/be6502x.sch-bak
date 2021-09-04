@@ -5,12 +5,12 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "BE6502X"
-Date "2021-06-28"
+Date "2021-08-14"
 Rev "1"
 Comp "by: Individual Solid"
 Comment1 "Design for JLCPCB 2 Layer Service"
 Comment2 ""
-Comment3 "and Garth Wilson (wilsonmines.co.uk)"
+Comment3 "and Garth Wilson (wilsonminesco.com)"
 Comment4 "Based on the circuit by Ben Eater (eater.net)"
 $EndDescr
 Text GLabel 1750 7300 2    50   Input ~ 0
