@@ -1,4 +1,4 @@
-name: example
+name: KiCAD Exports
 
 on:
   push:
@@ -12,21 +12,49 @@ on:
       - '02xsbcfirst/**.kicad_pcb'
 
 jobs:
-  example:
+  exports:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: nerdyscout/kicad-exports@v2.3.1
+      name: export schematics
       with:
-      # Required - kibot config file
         config: /opt/kibot/config/docs.schema.kibot.yaml
-      # optional - prefix to output defined in config
         dir: docs
-      # optional - schematic file
         schema: '02xsbcfirst/be6502x.sch'
-      # optional - PCB design file
         board: '02xsbcfirst/be6502x.kicad_pcb'
-      # optional - verbose output info
+        verbose: 0
+    - uses: nerdyscout/kicad-exports@v2.3.1
+      name: export board view
+      with:
+        config: /opt/kibot/config/boardview.kibot.yaml
+        dir: docs
+        schema: '02xsbcfirst/be6502x.sch'
+        board: '02xsbcfirst/be6502x.kicad_pcb'
+        verbose: 0
+    - uses: nerdyscout/kicad-exports@v2.3.1
+      name: export iBOM
+      with:
+        config: /opt/kibot/config/bom.ibom.kibot.yaml
+        dir: docs
+        schema: '02xsbcfirst/be6502x.sch'
+        board: '02xsbcfirst/be6502x.kicad_pcb'
+        verbose: 0
+    - uses: nerdyscout/kicad-exports@v2.3.1
+      name: export Fab files
+      with:
+        config: /opt/kibot/config/compress.fabrications.kibot.yaml
+        dir: docs
+        schema: '02xsbcfirst/be6502x.sch'
+        board: '02xsbcfirst/be6502x.kicad_pcb'
+        verbose: 0
+    - uses: nerdyscout/kicad-exports@v2.3.1
+      name: export Board files
+      with:
+        config: /opt/kibot/config/docs.board.kibot.yaml	
+        dir: docs
+        schema: '02xsbcfirst/be6502x.sch'
+        board: '02xsbcfirst/be6502x.kicad_pcb'
         verbose: 0
     - name: upload results
       uses: actions/upload-artifact@v2
