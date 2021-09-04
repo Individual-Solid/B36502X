@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name be6502x)(type KiCad)(uri ${KIPRJMOD}/be6502x.pretty)(options "")(descr ""))
-)

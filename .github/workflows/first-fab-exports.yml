@@ -4,12 +4,12 @@ on:
   push:
     paths:
     - '.github/workflows/first-fab-exports.yml'
-    - 'be6502x sbc FIRST FAB/**.sch'
-    - 'be6502x sbc FIRST FAB/**.kicad_pcb'
+    - '02xsbcfirst/**.sch'
+    - '02xsbcfirst/**.kicad_pcb'
   pull_request:
     paths:
-      - 'be6502x sbc FIRST FAB/**.sch'
-      - 'be6502x sbc FIRST FAB/**.kicad_pcb'
+      - '02xsbcfirst/**.sch'
+      - '02xsbcfirst/**.kicad_pcb'
 
 jobs:
   example:
@@ -23,9 +23,9 @@ jobs:
       # optional - prefix to output defined in config
         dir: docs
       # optional - schematic file
-        schema: 'be6502x\ sbc\ FIRST\ FAB/**.sch'
+        schema: '02xsbcfirst/**.sch'
       # optional - PCB design file
-        board: 'be6502x\ sbc\ FIRST\ FAB/**.kicad_pcb'
+        board: '02xsbcfirst/**.kicad_pcb'
       # optional - verbose output info
         verbose: 0
     - name: upload results
