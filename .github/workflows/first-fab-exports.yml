@@ -3,6 +3,7 @@ name: example
 on:
   push:
     paths:
+    - '.github/workflows/first-fab-exports.yml'
     - 'be6502x sbc FIRST FAB/**.sch'
     - 'be6502x sbc FIRST FAB/**.kicad_pcb'
   pull_request:
@@ -18,7 +19,7 @@ jobs:
     - uses: nerdyscout/kicad-exports@v2.3.1
       with:
       # Required - kibot config file
-        config: any.kibot.yaml
+        config: /opt/kibot/config/compress.documentation.kibot.yaml
       # optional - prefix to output defined in config
         dir: docs
       # optional - schematic file
