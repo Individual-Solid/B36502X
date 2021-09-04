@@ -23,9 +23,9 @@ jobs:
       # optional - prefix to output defined in config
         dir: docs
       # optional - schematic file
-        schema: '02xsbcfirst/**.sch'
+        schema: '02xsbcfirst/be6502x.sch'
       # optional - PCB design file
-        board: '02xsbcfirst/**.kicad_pcb'
+        board: '02xsbcfirst/be6502x.kicad_pcb'
       # optional - verbose output info
         verbose: 0
     - name: upload results
