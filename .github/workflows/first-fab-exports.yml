@@ -19,7 +19,7 @@ jobs:
     - uses: nerdyscout/kicad-exports@v2.3.1
       with:
       # Required - kibot config file
-        config: /opt/kibot/config/compress.documentation.kibot.yaml
+        config: /opt/kibot/config/docs.schema.kibot.yaml
       # optional - prefix to output defined in config
         dir: docs
       # optional - schematic file
