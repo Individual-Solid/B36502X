@@ -61,6 +61,9 @@ jobs:
       with:
         config: /opt/kibot/config/plot.black.kibot.yaml
         dir: docs
+        schema: '02xsbcfirst/be6502x.sch'
+        board: '02xsbcfirst/be6502x.kicad_pcb'
+        verbose: 0
     - uses: nerdyscout/kicad-exports@v2.3.1
       name: zip Fab files
       with:
