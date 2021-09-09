@@ -36,7 +36,7 @@ jobs:
       name: export drill files
       with:
         config: /opt/kibot/config/gerbers.drills.kibot.yaml
-        dir: docs
+        dir: fab
         schema: '02xsbcfirst/be6502x.sch'
         board: '02xsbcfirst/be6502x.kicad_pcb'
         verbose: 0
@@ -44,7 +44,7 @@ jobs:
       name: export Fab files
       with:
         config: /opt/kibot/config/gerbers.kibot.yaml
-        dir: docs
+        dir: fab
         schema: '02xsbcfirst/be6502x.sch'
         board: '02xsbcfirst/be6502x.kicad_pcb'
         verbose: 0
@@ -57,14 +57,24 @@ jobs:
         board: '02xsbcfirst/be6502x.kicad_pcb'
         verbose: 0
     - uses: nerdyscout/kicad-exports@v2.3.1
+      name: export board images
+      with:
+        config: /opt/kibot/config/plot.black.kibot.yaml
+        dir: docs
+    - uses: nerdyscout/kicad-exports@v2.3.1
       name: zip Fab files
       with:
         config: /opt/kibot/config/compress.fabrications.kibot.yaml
-        dir: docs
+        dir: fab
         schema: '02xsbcfirst/be6502x.sch'
         board: '02xsbcfirst/be6502x.kicad_pcb'
         verbose: 0
-    - name: upload results
+    - name: upload fab files
+      uses: actions/upload-artifact@v2
+      with:
+        name: fab
+        path: fab
+    - name: upload docs
       uses: actions/upload-artifact@v2
       with:
         name: docs
